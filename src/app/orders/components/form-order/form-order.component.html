@@ -1,0 +1,24 @@
+<div class="form-container">
+  <h2>{{ isEditMode ? 'Editar Pedido' : 'Nuevo Pedido' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <label>Cliente</label>
+    <select formControlName="customerId">
+      <option *ngFor="let customer of customers" [value]="customer.id">
+        {{ customer.companyName }}
+      </option>
+    </select>
+
+    <label>Descripción</label>
+    <input formControlName="description" />
+
+    <label>Estado</label>
+    <select formControlName="status">
+      <option value="pending">Pendiente</option>
+      <option value="completed">Completado</option>
+      <option value="cancelled">Cancelado</option>
+    </select>
+
+    <button type="submit">Guardar</button>
+  </form>
+</div>

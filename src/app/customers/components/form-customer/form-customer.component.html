@@ -1,0 +1,22 @@
+<div class="form-container">
+  <h2>{{ isEditMode ? 'Editar Cliente' : 'Nuevo Cliente' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <label>Nombre</label>
+    <input formControlName="firstName" />
+
+    <label>Apellido</label>
+    <input formControlName="lastName" />
+
+    <label>Email</label>
+    <input type="email" formControlName="email" />
+
+    <label>Teléfono</label>
+    <input formControlName="phone" />
+
+    <label>Empresa</label>
+    <input formControlName="companyName" />
+
+    <button type="submit">Guardar</button>
+  </form>
+</div>

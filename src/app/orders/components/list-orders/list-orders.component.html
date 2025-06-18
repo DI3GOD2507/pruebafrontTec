@@ -1,0 +1,27 @@
+<div class="list-container">
+  <h2>Pedidos</h2>
+  <button (click)="goToCreate()">+ Nuevo Pedido</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Descripción</th>
+        <th>Estado</th>
+        <th>Fecha</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.customer?.companyName }}</td>
+        <td>{{ order.description }}</td>
+        <td>{{ order.status }}</td>
+        <td>{{ order.createdAt | date:'short' }}</td>
+        <td>
+          <button (click)="goToEdit(order.id)">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

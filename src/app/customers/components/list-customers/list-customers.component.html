@@ -1,0 +1,25 @@
+<div class="list-container">
+  <h2>Clientes</h2>
+  <button (click)="goToCreate()">+ Nuevo Cliente</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Empresa</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{ customer.person?.firstName }} {{ customer.person?.lastName }}</td>
+        <td>{{ customer.person?.email }}</td>
+        <td>{{ customer.companyName }}</td>
+        <td>
+          <button (click)="goToEdit(customer.id)">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
