@@ -3,6 +3,6 @@ import { inject } from '@angular/core';
 
 export class BaseHttpService {
   protected http = inject(HttpClient);
-  protected apiUrl = 'http://localhost:3000/api';
-  protected apiAuth = 'http://localhost:3001/api' // ajustar según backend
+  protected apiUrl = 'http://127.0.0.1:8000';
+  protected apiAuth = 'https://localhost:7248/api' // ajustar según backend
 }
