@@ -24,7 +24,7 @@ export class AuthService extends BaseHttpService {
   }
 
 login(email: string, password: string) {
-  return this.http.post<{ token: string }>(`${this.apiAuth}/auth/login`, {
+  return this.http.post<{ token: string }>(`${this.apiAuth}/Auth/login`, {
     email,
     passwordHash: password
   }).pipe(
